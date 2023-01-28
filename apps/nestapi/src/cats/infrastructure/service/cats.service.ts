@@ -68,7 +68,7 @@ export class CatsService implements ICatsService {
     );
 
     // cache the result
-    this.logger.log('CatsService getCats cache result: ' + this.cacheTtl);
+    this.logger.log('CatsService cachettl: ' + this.cacheTtl);
     await this.cacheService.set(this.cacheKey, result, this.cacheTtl);
 
     return result;
