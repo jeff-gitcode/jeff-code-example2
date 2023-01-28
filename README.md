@@ -104,7 +104,7 @@ $ docker-compose up
 ## Screenshots
 
 - Swagger
-  ![swagger](doc/swagger.JPG)
+  ![swagger](doc/swagger1.JPG)
 
 - Health Checks
   ![health](doc/health-check.JPG)
