@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  nestapi:
+    image: nestapi
+    environment:
+      - NODE_ENV=development
+      - CATSAPI=https://api.thecatapi.com/v1/breeds
+      - CACHETTL=5000
+    ports:
+      - '3333:3333'
+    networks:
+      - dev-network
+    
+
+networks:
+    dev-network:

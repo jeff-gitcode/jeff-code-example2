@@ -1,0 +1,6 @@
+# @host = https://api.thecatapi.com/v1/breeds
+@host = http://localhost:3333/api/cats
+
+### GET /getTopFriendlyCatBreeds
+GET {{host}}/getTopFriendlyCatBreeds HTTP/1.1
+content-type: text/html,application/xhtml+xml,application/xml;
