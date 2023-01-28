@@ -59,7 +59,7 @@ $ yarn add cache-manager
 # add helmet
 $ yarn add helmet
 
-# add Rate-Limiter
+# add rate-limiter
 $ yarn add @nestjs/throttler
 
 # add jest mock
@@ -72,6 +72,9 @@ $ yarn add -D supertest
 ## Run project
 
 ```javascript
+# restore packages
+$ yarn install
+
 # lint
 $ yarn lint
 
