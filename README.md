@@ -115,5 +115,8 @@ $ docker-compose up
 - Rest Client tests
   ![link](doc/rest-client2.gif)
 
+- Log
+  ![link](doc/log.JPG)
+
 - Docker
   ![link](doc/docker.JPG)
