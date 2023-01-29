@@ -20,6 +20,9 @@
 ## Setup project
 
 ```javascript
+# install nx
+$ npm install -g nx
+
 # create project
 $ npx create-nx-workspace jeff-code-example2 --preset=nest
 
@@ -92,11 +95,29 @@ $ yarn start
 
 ```javascript
 
-# docker file ./apps/nestapi/Dockerfile
+# docker file location ./apps/nestapi/Dockerfile
 $ docker build -f ./apps/nestapi/Dockerfile . -t nestapi
 
 # docker-compose.yml
 $ docker-compose up
+
+# kubenetes
+# kubenetes file location ./k8s
+
+# apply deployment
+$ kubectl apply -f ./k8s/deplooyment.yaml
+
+# check kubernetes pods
+$ kubectl get pods
+
+# apply service
+$ kubectl apply -f ./k8s/service.yaml
+
+# check service
+$ kubectl get service
+
+# check endpoints service port
+http://localhost:serviceport/api
 
 [Webapi Url](http://localhost:3333/api)
 ```
@@ -120,3 +141,6 @@ $ docker-compose up
 
 - Docker
   ![link](doc/docker.JPG)
+
+- Kubernetes
+  ![link](doc/kubenetes.JPG)

@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nestapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nestapi
+  template:
+    metadata:
+      labels:
+        app: nestapi
+    spec:
+      containers:
+      - name: nestapi
+        image: nestapi
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3333
+
+# kubectl get namespaces
+# kubectl create -f k8s/deployment.yaml
+# kubectl get pods
+
+# kubectl apply -f k8s/service.yaml
+# kubectl get service
+
+# http://localhost:port/api
+
+# kubectl logs id
+

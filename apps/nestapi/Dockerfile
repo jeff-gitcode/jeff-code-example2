@@ -1,19 +1,32 @@
-##########################################################################################
-FROM node:lts-alpine
+FROM node:lts-alpine AS development
 
-WORKDIR /app
+WORKDIR /src
 
-COPY ./dist/apps/nestapi .
+COPY package*.json ./
 
-ENV PORT=3333
+RUN npm install
 
-EXPOSE ${PORT}
+COPY . .
 
-RUN yarn install
+RUN npm run build && npm prune --production
 
-# dependencies that nestjs needs
-RUN yarn add reflect-metadata tslib rxjs helmet cache-manager @nestjs/platform-express @nestjs/common @nestjs/core @nestjs/swagger @nestjs/terminus @nestjs/throttler @nestjs/config @nestjs/axios @nestjs/cqrs
+FROM node:lts-alpine AS production
 
-CMD node ./main.js
+WORKDIR /src
 
+ENV NODE_ENV=production
+ENV CATSAPI=https://api.thecatapi.com/v1/breeds
+ENV CACHETTL=5000
+
+COPY --from=development /src/dist /src/dist
+
+COPY --from=development /src/node_modules /src/node_modules
+
+EXPOSE 3333
+
+CMD ["node", "dist/apps/nestapi/main.js"]
+
+## docker test steps
 # docker build -f ./apps/nestapi/Dockerfile . -t nestapi
+# docker build -t nestapi .
+# docker run -d -p 3333:3333 nestapi
