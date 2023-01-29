@@ -89,6 +89,9 @@ $ yarn start
 
 # build
 # yarn build
+
+[Webapi Url](http://localhost:3333/api)
+
 ```
 
 ## Deploy project
@@ -98,6 +101,9 @@ $ yarn start
 # docker file location ./apps/nestapi/Dockerfile
 $ docker build -f ./apps/nestapi/Dockerfile . -t nestapi
 
+# check docker image
+$ docker images --format "table {{.ID}}\t{{.Tag}}\t{{.Repository}}"
+
 # docker-compose.yml
 $ docker-compose up
 
@@ -105,7 +111,7 @@ $ docker-compose up
 # kubenetes file location ./k8s
 
 # apply deployment
-$ kubectl apply -f ./k8s/deplooyment.yaml
+$ kubectl apply -f ./k8s/deployment.yaml
 
 # check kubernetes pods
 $ kubectl get pods
@@ -119,7 +125,6 @@ $ kubectl get service
 # check endpoints service port
 http://localhost:serviceport/api
 
-[Webapi Url](http://localhost:3333/api)
 ```
 
 ## Screenshots
