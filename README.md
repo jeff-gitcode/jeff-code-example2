@@ -16,6 +16,7 @@
 - [x] jest
 - [x] json-server
 - [x] Docker
+- [x] Kubernetes
 
 ## Setup project
 
